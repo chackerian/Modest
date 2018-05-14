@@ -1,0 +1,46 @@
+# Manually coded facts of YAGO2s.
+#  DO NOT OVERWRITE!
+# This file contains the rules for the RuleExtractor
+
+# This file is part of the YAGO project at the Max Planck Institute
+# for Informatics/Germany and Télécom ParisTech University/France:
+# http://yago-knowledge.org
+
+# This file is copyright 2016 Fabian M. Suchanek.
+
+# YAGO is free software: you can redistribute it and/or modify it
+# under the terms of the GNU General Public License as published
+# by the Free Software Foundation, either version 3 of the License,
+# or (at your option) any later version.
+
+# YAGO is distributed in the hope that it will be useful, but WITHOUT
+# ANY WARRANTY; without even the implied warranty of MERCHANTABILITY
+# or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public
+# License for more details.
+
+# You should have received a copy of the GNU General Public License
+# along with YAGO.  If not, see <http://www.gnu.org/licenses/>.
+
+@base <http://yago-knowledge.org/resource/> .
+@prefix dc: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix vcard: <http://www.w3.org/2006/vcard/ns#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+#"$0 <wasBornOnDate> $1 ; $0 <wasBornIn> $2"	<_implies>	"$0 <wasBornOnDate> $1 ; $0 <wasBornIn> $2 ; #1 <happenedIn> $2; #2 <happenedOnDate> $1" .
+"$0 rdf:type owl:SymmetricProperty; $1 $0 $2"	<_implies>	"$2 $0 $1" .
+
+# Fabian: Let's avoid inferring types, as this is sometimes erroneous (for horses which have a birthdate)
+# and as it might screw up the type coherence checking
+# Anyway, the rule extractor runs after the type checker, which already discards these facts.
+# "$0 <wasBornOnDate> $1"	<_implies>	"$0 rdf:type <wordnet_person_100007846>" .
+# "$0 <diedOnDate> $1"	<_implies>	"$0 rdf:type <wordnet_person_100007846>" .
+# "$0 <isMarriedTo> $1"	<_implies>	"$0 rdf:type <wordnet_person_100007846>" .
+# "$0 <worksAt> $1"	<_implies>	"$0 rdf:type <wordnet_person_100007846>" .
+# "$0 <hasAcademicAdvisor> $1"	<_implies>	"$0 rdf:type <wordnet_person_100007846>" .
+# "$0 <hasLatitude> $1"	<_implies>	"$0 rdf:type <yagoGeoEntity>" .
+# "$0 <hasLongitude> $1"	<_implies>	"$0 rdf:type <yagoGeoEntity>" .

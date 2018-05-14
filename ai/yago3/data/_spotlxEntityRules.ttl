@@ -1,0 +1,49 @@
+# Manually coded facts of YAGO2s SPOTLX representation.
+#  DO NOT OVERWRITE!
+# This file contains the rules for the SPOTLXRuleExtractor
+
+# This file is part of the YAGO project at the Max Planck Institute
+# for Informatics/Germany and Télécom ParisTech University/France:
+# http://yago-knowledge.org
+
+# This file is copyright 2016 Johannes Hoffart.
+
+# YAGO is free software: you can redistribute it and/or modify it
+# under the terms of the GNU General Public License as published
+# by the Free Software Foundation, either version 3 of the License,
+# or (at your option) any later version.
+
+# YAGO is distributed in the hope that it will be useful, but WITHOUT
+# ANY WARRANTY; without even the implied warranty of MERCHANTABILITY
+# or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public
+# License for more details.
+
+# You should have received a copy of the GNU General Public License
+# along with YAGO.  If not, see <http://www.gnu.org/licenses/>.
+
+@base <http://yago-knowledge.org/resource/> .
+@prefix dc: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix vcard: <http://www.w3.org/2006/vcard/ns#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+#====================== ENTITIES LOCATION RULES ================================
+#===============================================================================
+
+"$0 <happenedIn> $1" <_implies> "$0 <placedIn> $1" .
+"$0 <isLocatedIn> $1 ; $0 -rdf:type <yagoGeoEntity>" <_implies> "$0 <placedIn> $1" .
+
+#====================== ENTITIES TIME RULES ====================================
+#===============================================================================
+
+"$0 <wasBornOnDate> $1" <_implies> "$0 <startsExistingOnDate> $1" .
+"$0 <wasCreatedOnDate> $1" <_implies> "$0 <startsExistingOnDate> $1" .
+"$0 <startedOnDate> $1" <_implies> "$0 <startsExistingOnDate> $1" .
+
+"$0 <diedOnDate> $1" <_implies> "$0 <endsExistingOnDate> $1" .
+"$0 <wasDestroyedOnDate> $1" <_implies> "$0 <endsExistingOnDate> $1" .
+"$0 <endedOnDate> $1" <_implies> "$0 <endsExistingOnDate> $1" .

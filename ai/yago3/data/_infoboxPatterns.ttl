@@ -1,0 +1,283 @@
+# Manually coded facts of YAGO2s.
+#  DO NOT OVERWRITE!
+# This file contains the infobox patterns, and infobox combinations.
+# It is used by the InfoboxExtractor.
+# Infobox patterns are not case sensitive.
+
+# This file is part of the YAGO project at the Max Planck Institute
+# for Informatics/Germany and Télécom ParisTech University/France:
+# http://yago-knowledge.org
+
+# This file is copyright 2016 Fabian M. Suchanek.
+
+# YAGO is free software: you can redistribute it and/or modify it
+# under the terms of the GNU General Public License as published
+# by the Free Software Foundation, either version 3 of the License,
+# or (at your option) any later version.
+
+# YAGO is distributed in the hope that it will be useful, but WITHOUT
+# ANY WARRANTY; without even the implied warranty of MERCHANTABILITY
+# or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public
+# License for more details.
+
+# You should have received a copy of the GNU General Public License
+# along with YAGO.  If not, see <http://www.gnu.org/licenses/>.
+
+@base <http://yago-knowledge.org/resource/> .
+@prefix dc: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix vcard: <http://www.w3.org/2006/vcard/ns#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# --------- Bad Infobox --------------
+"weather"	rdf:type	<_yagoNonConceptualInfobox> .
+"family name"	rdf:type	<_yagoNonConceptualInfobox> .
+"surname"	rdf:type	<_yagoNonConceptualInfobox> .
+"given name"	rdf:type	<_yagoNonConceptualInfobox> .
+"baseball biography"	rdf:type	<_yagoNonConceptualInfobox> . # Has multiple biographie son one page
+
+# --------- Attribute units --------------
+<infobox/en/populationdensitykm>	<_hasPredefinedUnit>	</km2> .
+<infobox/en/area>	<_hasPredefinedUnit>	<km2> .
+<infobox/en/areakm>	<_hasPredefinedUnit>	<km2> .
+<infobox/en/areatotalkm>	<_hasPredefinedUnit>	<km2> .
+<infobox/en/unemployment> <_hasPredefinedUnit>	<percent> .
+
+# --------- Infobox patterns --------------
+
+<infobox/en/clubs>  <_infoboxPattern> <playsFor> .
+<infobox/en/pages>  <_infoboxPattern> <hasPages> .
+<infobox/en/latitude>  <_infoboxPattern> <hasLatitude> .
+<infobox/en/longitude> <_infoboxPattern> <hasLongitude> .
+<infobox/en/Nickname> <_infoboxPattern> rdfs:label .
+<infobox/en/nativename> <_infoboxPattern> rdfs:label .
+<infobox/en/commonname> <_infoboxPattern> rdfs:label .
+<infobox/en/alias>  <_infoboxPattern> rdfs:label .
+<infobox/en/alternatename>  <_infoboxPattern> rdfs:label .
+<infobox/en/abbreviation> <_infoboxPattern> rdfs:label .
+<infobox/en/companyname>  <_infoboxPattern> rdfs:label .
+<infobox/en/fullname> <_infoboxPattern> rdfs:label .
+#@ <infoBoxId0>
+<infobox/en/binomial> <_infoboxPattern> rdfs:label .
+<infoBoxId0>  rdfs:comment  "Added by Fabian 2011-05-26" .
+#@ <infoBoxId1>
+<infobox/en/playername> <_infoboxPattern> rdfs:label .
+<infoBoxId1>  rdfs:comment  "Added by Fabian 2011-05-26" .
+#@ <infoBoxId2>
+<infobox/en/synonyms> <_infoboxPattern> rdfs:label .
+<infoBoxId2>  rdfs:comment  "Added by Fabian 2011-05-27" .
+#<infobox/en/ICD10>  <_infoboxPattern> <hasICD10> .
+<infobox/en/Capital>  <_infoboxPattern> <hasCapital> .
+<infobox/en/OfficialLang> <_infoboxPattern> <hasOfficialLanguage> .
+# <infobox/en/---Governor>  <_infoboxPattern> <isLeabio markt saarbrueckenderOf-> . // Often goes for the president with his governor
+<infobox/en/Senators> <_infoboxPattern> <isPoliticianOf-> .
+<infobox/en/Motto>  <_infoboxPattern> <hasMotto> .
+<infobox/en/nationalMotto>  <_infoboxPattern> <hasMotto> .
+<infobox/en/governmenttype> <_infoboxPattern> rdf:type .
+<infobox/en/leadername> <_infoboxPattern> <isLeaderOf-> .
+<infobox/en/establisheddate>  <_infoboxPattern> <wasCreatedOnDate> .
+<infobox/en/area> <_infoboxPattern> <hasArea> .
+<infobox/en/areakm> <_infoboxPattern> <hasArea> .
+<infobox/en/areatotalkm> <_infoboxPattern> <hasArea> .
+<infobox/en/populationestimate> <_infoboxPattern> <hasNumberOfPeople> .
+<infobox/en/populationdensitykm>  <_infoboxPattern> <hasPopulationDensity> .
+<infobox/en/GDPnominal> <_infoboxPattern> <hasGDP> .
+<infobox/en/Gini> <_infoboxPattern> <hasGini> .
+#<infobox/en/utcoffset> <_infoboxPattern> <hasUTCOffset> .
+<infobox/en/cctld>  <_infoboxPattern> <hasTLD> .
+<infobox/en/currency> <_infoboxPattern> <hasCurrency> .
+<infobox/en/expenses> <_infoboxPattern> <hasExpenses> .
+<infobox/en/exportgoods> <_infoboxPattern> <exports> .
+<infobox/en/exportpartners>  <_infoboxPattern> <dealsWith> .
+<infobox/en/exports>  <_infoboxPattern> <hasExport> .
+<infobox/en/growth> <_infoboxPattern> <hasEconomicGrowth> .
+#<infobox/en/hdi> <_infoboxPattern> <hasHDI> . # Bad results here
+<infobox/en/importgoods> <_infoboxPattern> <imports> .
+<infobox/en/importpartners>  <_infoboxPattern> <dealsWith> .
+<infobox/en/imports>  <_infoboxPattern> <hasImport> .
+<infobox/en/inflation>  <_infoboxPattern> <hasInflation> .
+<infobox/en/localname>  <_infoboxPattern> rdfs:label .
+<infobox/en/location> <_infoboxPattern> <isLocatedIn> .
+#@ <infoBoxId3>
+<infobox/en/county> <_infoboxPattern> <isLocatedIn> .
+<infoBoxId3>  rdfs:comment  "Added 2011-04-26 for jeopardy" .
+#@ <infoBoxId4>
+<infobox/en/roof> <_infoboxPattern> <hasHeight> .
+<infoBoxId4>  rdfs:comment  "Added 2011-04-26 for jeopardy" .
+#@ <infoBoxId5>
+<infobox/en/subdivisionname1>  <_infoboxPattern> <isLocatedIn> .
+<infoBoxId5>  rdfs:comment  "Added 2011-04-26 for jeopardy" .
+#@ <infoBoxId6>
+<infobox/en/subdivisionname> <_infoboxPattern> <isLocatedIn> .
+<infoBoxId6>  rdfs:comment  "Added 2011-04-26 for jeopardy" .
+<infobox/en/locationcity> <_infoboxPattern> <isLocatedIn> .
+<infobox/en/officiallanguages>  <_infoboxPattern> <hasOfficialLanguage> .
+<infobox/en/officialname> <_infoboxPattern> rdfs:label .
+<infobox/en/population> <_infoboxPattern> <hasNumberOfPeople> .
+<infobox/en/populationtotal>  <_infoboxPattern> <hasNumberOfPeople> .
+<infobox/en/poverty>  <_infoboxPattern> <hasPoverty> .
+<infobox/en/unemployment> <_infoboxPattern> <hasUnemployment> .
+#@ <infoBoxId7>
+<infobox/en/length> <_infoboxPattern> <hasLength> .
+<infoBoxId7>  rdfs:comment  "Added 2011-04-27 for GeoCLEF" .
+#@ <infoBoxId8>
+<infobox/en/established>  <_infoboxPattern> <wasCreatedOnDate> .
+<infoBoxId8>  rdfs:comment  "Added by Fabian 2011-05-27" .
+#@ <infoBoxId9>
+<infobox/en/architect>  <_infoboxPattern> <created-> .
+<infoBoxId9>  rdfs:comment  "Added by Fabian 2011-05-27" .
+#@ <infoBoxId10>
+<infobox/en/department> <_infoboxPattern> <isLocatedIn> .
+<infoBoxId10> rdfs:comment  "Added by Fabian 2011-05-27" .
+#@ <infoBoxId11>
+<infobox/en/arondissement>  <_infoboxPattern> <isLocatedIn> .
+<infoBoxId11> rdfs:comment  "Added by Fabian 2011-05-27" .
+#@ <infoBoxId12>
+<infobox/en/canton> <_infoboxPattern> <isLocatedIn> .
+<infoBoxId12> rdfs:comment  "Added by Fabian 2011-05-27" .
+#@ <infoBoxId13>
+<infobox/en/road> <_infoboxPattern> <isLocatedIn-> .
+<infoBoxId13> rdfs:comment  "Added by Fabian 2011-05-29" .
+<infobox/en/nationality>  <_infoboxPattern> <isCitizenOf> .
+<infobox/en/citizenship>  <_infoboxPattern> <isCitizenOf> .
+<infobox/en/birthname>  <_infoboxPattern> rdfs:label .
+<infobox/en/birthdate>  <_infoboxPattern> <wasBornOnDate> .
+<infobox/en/dateofbirth>  <_infoboxPattern> <wasBornOnDate> .
+<infobox/en/born> <_infoboxPattern> <wasBornOnDate> .
+<infobox/en/deathdate>  <_infoboxPattern> <diedOnDate> .
+<infobox/en/dateofdeath>  <_infoboxPattern> <diedOnDate> .
+<infobox/en/birthplace> <_infoboxPattern> <wasBornIn> .
+<infobox/en/deathplace> <_infoboxPattern> <diedIn> .
+<infobox/en/died> <_infoboxPattern> <diedOnDate> .
+<infobox/en/spouse> <_infoboxPattern> <isMarriedTo> .
+<infobox/en/children> <_infoboxPattern> <hasChild> .
+<infobox/en/daughter> <_infoboxPattern> <hasChild> .
+<infobox/en/daughters> <_infoboxPattern> <hasChild> .
+<infobox/en/occupation> <_infoboxPattern> rdf:type .
+<infobox/en/profession> <_infoboxPattern> rdf:type .
+<infobox/en/politicalparty> <_infoboxPattern> <isAffiliatedTo> .
+<infobox/en/party>  <_infoboxPattern> <isAffiliatedTo> .
+<infobox/en/maininterests>  <_infoboxPattern> <isInterestedIn> .
+<infobox/en/notableideas> <_infoboxPattern> <isKnownFor> .
+<infobox/en/contributions>  <_infoboxPattern> <isKnownFor> .
+# <infobox/en/knownfor> <_infoboxPattern> <isKnownFor> . // Often gives themes/affairs instead of noteable ideas
+<infobox/en/awards> <_infoboxPattern> <hasWonPrize> .
+<infobox/en/notableworks> <_infoboxPattern> <created> .
+<infobox/en/workinstitutions> <_infoboxPattern> <worksAt> .
+<infobox/en/workplaces> <_infoboxPattern> <worksAt> .
+<infobox/en/doctoraladvisor>  <_infoboxPattern> <hasAcademicAdvisor> .
+<infobox/en/doctoralstudents> <_infoboxPattern> <hasAcademicAdvisor-> .
+<infobox/en/parents>  <_infoboxPattern> <hasChild-> .
+<infobox/en/father> <_infoboxPattern> <hasChild-> .
+<infobox/en/mother> <_infoboxPattern> <hasChild-> .
+<infobox/en/influences> <_infoboxPattern> <influences-> .
+<infobox/en/influencedby> <_infoboxPattern> <influences-> .
+<infobox/en/influenced> <_infoboxPattern> <influences> .
+<infobox/en/almamater>  <_infoboxPattern> <graduatedFrom> .
+<infobox/en/height> <_infoboxPattern> <hasHeight> .
+<infobox/en/weight> <_infoboxPattern> <hasWeight> .
+<infobox/en/website>  <_infoboxPattern> <hasWebsite> .
+<infobox/en/academyawards>  <_infoboxPattern> <hasWonPrize> .
+<infobox/en/afiawards>  <_infoboxPattern> <hasWonPrize> .
+<infobox/en/artist> <_infoboxPattern> <created-> .
+<infobox/en/baftaawards>  <_infoboxPattern> <hasWonPrize> .
+<infobox/en/commander>  <_infoboxPattern> <isLeaderOf-> .
+<infobox/en/commanderinchief> <_infoboxPattern> <isLeaderOf-> .
+<infobox/en/famousworks>  <_infoboxPattern> <created> .
+<infobox/en/founded>  <_infoboxPattern> <wasCreatedOnDate> .
+<infobox/en/goldenglobeawards>  <_infoboxPattern> <hasWonPrize> .
+<infobox/en/homepage> <_infoboxPattern> <hasWebsite> .
+<infobox/en/instrument> <_infoboxPattern> <hasMusicalRole> .
+<infobox/en/magnumopus> <_infoboxPattern> <created> .
+<infobox/en/placeofbirth> <_infoboxPattern> <wasBornIn> .
+<infobox/en/placeofdeath> <_infoboxPattern> <diedIn> .
+# <infobox/en/premier>  <_infoboxPattern> <isLeaderOf-> . # This attribute is often given to the governing *person*
+<infobox/en/prizes> <_infoboxPattern> <hasWonPrize> .
+<infobox/en/residence>  <_infoboxPattern> <livesIn> .
+<infobox/en/url>  <_infoboxPattern> <hasWebsite> .
+#@ <infoBoxId14>
+<infobox/en/cityofbirth>  <_infoboxPattern> <wasBornIn> .
+<infoBoxId14> rdfs:comment  "Added by Fabian 2011-05-26" .
+#@ <infoBoxId15>
+<infobox/en/countryofbirth> <_infoboxPattern> <wasBornIn> .
+<infoBoxId15> rdfs:comment  "Added by Fabian 2011-05-26" .
+#@ <infoBoxId16>
+<infobox/en/team> <_infoboxPattern> <isAffiliatedTo> .
+<infoBoxId16> rdfs:comment  "Added by Fabian 2011-05-29" .
+#@ <infoBoxId17>
+<infobox/en/clubs>  <_infoboxPattern> <isAffiliatedTo> .
+<infoBoxId17> rdfs:comment  "Added by Fabian 2011-05-29" .
+#@ <infoBoxId18>
+<infobox/en/youthclubs> <_infoboxPattern> <isAffiliatedTo> .
+<infoBoxId18> rdfs:comment  "Added by Fabian 2011-05-29" .
+#@ <infoBoxId19>
+<infobox/en/nationalteam> <_infoboxPattern> <isAffiliatedTo> .
+<infoBoxId19> rdfs:comment  "Added by Fabian 2011-05-29" .
+#@ <infoBoxId20>
+<infobox/en/currentclub>  <_infoboxPattern> <isAffiliatedTo> .
+<infoBoxId20> rdfs:comment  "Added by Fabian 2011-05-29" .
+<infobox/en/director> <_infoboxPattern> <directed-> .
+<infobox/en/writer> <_infoboxPattern> <created-> .
+<infobox/en/composer> <_infoboxPattern> <created-> .
+<infobox/en/starring> <_infoboxPattern> <actedIn-> .
+# <infobox/en/producer> <_infoboxPattern> <produced-> . # Had bad results here
+<infobox/en/published>  <_infoboxPattern> <wasCreatedOnDate> .
+<infobox/en/author> <_infoboxPattern> <created-> .
+<infobox/en/released> <_infoboxPattern> <wasCreatedOnDate> .
+<infobox/en/releasedate>  <_infoboxPattern> <wasCreatedOnDate> .
+<infobox/en/runtime>  <_infoboxPattern> <hasDuration> .
+<infobox/en/duration> <_infoboxPattern> <hasDuration> .
+<infobox/en/budget> <_infoboxPattern> <hasBudget> .
+<infobox/en/datecreated>  <_infoboxPattern> <wasCreatedOnDate> .
+<infobox/en/isbn> <_infoboxPattern> <hasISBN> .
+<infobox/en/creator>  <_infoboxPattern> <created-> .
+<infobox/en/designer> <_infoboxPattern> <created-> .
+<infobox/en/developer>  <_infoboxPattern> <created-> .
+<infobox/en/imdbid> <_infoboxPattern> <hasImdb> .
+<infobox/en/imdb> <_infoboxPattern> <hasImdb> .
+# <infobox/en/production company> <_infoboxPattern> <produced-> . # Had bad results here
+<infobox/en/revenue>  <_infoboxPattern> <hasRevenue> .
+<infobox/en/slogan> <_infoboxPattern> <hasMotto> .
+#@ <infoBoxId21>
+<infobox/en/recorded> <_infoboxPattern> <wasCreatedOnDate> .
+<infoBoxId21> rdfs:comment  "Added by Fabian 2011-05-26" .
+#@ <infoBoxId22>
+<infobox/en/editing>  <_infoboxPattern> <edited-> .
+<infoBoxId22> rdfs:comment  "Added by Fabian 2011-05-29" .
+#@ <infoBoxId23>
+<infobox/en/music>  <_infoboxPattern> <wroteMusicFor-> .
+<infoBoxId23> rdfs:comment  "Added by Fabian 2011-05-29" .
+<infobox/en/founder>  <_infoboxPattern> <created-> .
+#@ <infoBoxId24>
+<infobox/en/region> <_infoboxPattern> <isLocatedIn> .
+<infoBoxId24> rdfs:comment  "Added by Fabian 2011-05-26" .
+#@ <infoBoxId25>
+<infobox/en/country>  <_infoboxPattern> <isLocatedIn> .
+<infoBoxId25> rdfs:comment  "Added by Fabian 2011-05-26" .
+#@ <infoBoxId26>
+<infobox/en/city> <_infoboxPattern> <isLocatedIn> .
+<infoBoxId26> rdfs:comment  "Added by Fabian 2011-05-26" .
+#@ <infoBoxId27>
+<infobox/en/state>  <_infoboxPattern> <isLocatedIn> .
+<infoBoxId27> rdfs:comment  "Added by Fabian 2011-05-26" .
+<infobox/en/foundation> <_infoboxPattern> <wasCreatedOnDate> .
+<infobox/en/headquarters> <_infoboxPattern> <isLocatedIn> .
+<infobox/en/numemployees> <_infoboxPattern> <hasNumberOfPeople> .
+#@ <infoBoxId28>
+<infobox/en/owner>  <_infoboxPattern> <owns-> .
+<infoBoxId28> rdfs:comment  "Added by Fabian 2011-05-29" .
+<infobox/en/combatant>  <_infoboxPattern> <participatedIn-> .
+<infobox/en/place>  <_infoboxPattern> <happenedIn> .
+<infobox/en/dat>    <_infoboxPattern> <happenedOnDate> .
+<infobox/en/year> <_infoboxPattern> <happenedOnDate> .
+<infobox/en/IATA>	<_infoboxPattern> <hasAirportCode> .
+
+# fix issues with issues, i.e. successors mapped to children
+<infobox/en/successor>	<_infoboxPattern>	owl:Nothing .
+<infobox/en/succesor>	<_infoboxPattern>	owl:Nothing .
+<infobox/en/coregency>	<_infoboxPattern>	owl:Nothing .
+

@@ -1,0 +1,61 @@
+# Manually coded facts of YAGO2s.
+#  DO NOT OVERWRITE!
+# This file contains manual mappings for infobox attributes where the automatic mapping failed.
+
+# This file is part of the YAGO project at the Max Planck Institute
+# for Informatics/Germany and Télécom ParisTech University/France:
+# http://yago-knowledge.org
+
+# This file is copyright 2016 Fabian M. Suchanek.
+
+# YAGO is free software: you can redistribute it and/or modify it
+# under the terms of the GNU General Public License as published
+# by the Free Software Foundation, either version 3 of the License,
+# or (at your option) any later version.
+
+# YAGO is distributed in the hope that it will be useful, but WITHOUT
+# ANY WARRANTY; without even the implied warranty of MERCHANTABILITY
+# or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public
+# License for more details.
+
+# You should have received a copy of the GNU General Public License
+# along with YAGO.  If not, see <http://www.gnu.org/licenses/>.
+
+@base <http://yago-knowledge.org/resource/> .
+@prefix dc: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix vcard: <http://www.w3.org/2006/vcard/ns#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<infobox/nl/periode>    <_infoboxPattern>	owl:Nothing .
+<infobox/fr/successeur>    <_infoboxPattern>	owl:Nothing .
+<infobox/fr/cotitulaire>    <_infoboxPattern>	owl:Nothing .
+<infobox/fr/conjoint>    <_infoboxPattern>	owl:Nothing .
+<infobox/de/isin>    <_infoboxPattern>	<hasISIN> .
+<infobox/fr/notes>    <_infoboxPattern>	owl:Nothing .
+<infobox/nl/opvolger>    <_infoboxPattern>	owl:Nothing .
+<infobox/fr/plusgrandeville>    <_infoboxPattern>	<isLocatedIn-> .
+<infobox/de/kontrahent>	<_infoboxPattern>	<participatedIn-> .
+<infobox/nl/combatant>	<_infoboxPattern>	<participatedIn-> .
+<infobox/fr/filmsnotables>	<_infoboxPattern>	owl:Nothing . # Can be directed or actedIn
+<infobox/fr/coempereur> <_infoboxPattern>       owl:Nothing .
+<infobox/fr/successeur> <_infoboxPattern>       owl:Nothing .
+<infobox/fr/cousurpateur>       <_infoboxPattern>       owl:Nothing .
+<infobox/fa/after>      <_infoboxPattern>       owl:Nothing .
+<infobox/nl/opvolger>   <_infoboxPattern>       owl:Nothing .
+<infobox/ro/succesor>   <_infoboxPattern>       owl:Nothing .
+<infobox/ro/urmași>     <_infoboxPattern>       owl:Nothing .
+
+
+# fix issues with issues, i.e. successors mapped to children
+<infobox/ar/successor>	<_infoboxPattern>	owl:Nothing .
+<infobox/fr/coempereur>	<_infoboxPattern>	owl:Nothing .
+<infobox/fr/cousurpateur>	<_infoboxPattern>	owl:Nothing .
+<infobox/nl/medekeizer>	<_infoboxPattern>	owl:Nothing .
+<infobox/nl/opvolger>	<_infoboxPattern>	owl:Nothing .
+<infobox/pl/następca>	<_infoboxPattern>	owl:Nothing .
+<infobox/zh/successor>	<_infoboxPattern>	owl:Nothing .

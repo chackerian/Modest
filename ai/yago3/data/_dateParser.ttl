@@ -1,0 +1,110 @@
+# This is a hand-coded file!
+# Do not overwrite!
+# The order of rules matters!
+
+# This file is part of the YAGO project at the Max Planck Institute
+# for Informatics/Germany and Télécom ParisTech University/France:
+# http://yago-knowledge.org
+
+# This file is copyright 2016 Thomas Rebele, with contributions from Fabian M. Suchanek.
+
+# YAGO is free software: you can redistribute it and/or modify it
+# under the terms of the GNU General Public License as published
+# by the Free Software Foundation, either version 3 of the License,
+# or (at your option) any later version.
+
+# YAGO is distributed in the hope that it will be useful, but WITHOUT
+# ANY WARRANTY; without even the implied warranty of MERCHANTABILITY
+# or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public
+# License for more details.
+
+# You should have received a copy of the GNU General Public License
+# along with YAGO.  If not, see <http://www.gnu.org/licenses/>.
+
+# Normalize spaces and underbars
+"[ \t\n\u00A0\u202F\uFEFF_]++" <mapsTo> " " .
+
+# Eliminate suffixes
+"(\d)(st|nd|rd|th)" <mapsTo> "$1" .
+
+# English months
+"January" <mapsTo> "_monthName_01_" .
+"February" <mapsTo>  "_monthName_02_" .
+"March" <mapsTo>  "_monthName_03_" .
+"April" <mapsTo>  "_monthName_04_" .
+"May" <mapsTo>  "_monthName_05_" .
+"June" <mapsTo>  "_monthName_06_" .
+"July" <mapsTo>  "_monthName_07_" .
+"August" <mapsTo>  "_monthName_08_" .
+"September" <mapsTo>  "_monthName_09_" .
+"October" <mapsTo>  "_monthName_10_" .
+"November" <mapsTo>  "_monthName_11_" .
+"December" <mapsTo>  "_monthName_12_" .
+
+# English months in short
+"Jan" <mapsTo> "_monthName_01_" .
+"Feb" <mapsTo>  "_monthName_02_" .
+"Mar" <mapsTo>  "_monthName_03_" .
+"Apr" <mapsTo>  "_monthName_04_" .
+"Jun" <mapsTo>  "_monthName_06_" .
+"Jul" <mapsTo>  "_monthName_07_" .
+"Aug" <mapsTo>  "_monthName_08_" .
+"Sep" <mapsTo>  "_monthName_09_" .
+"Oct" <mapsTo>  "_monthName_10_" .
+"Nov" <mapsTo>  "_monthName_11_" .
+"Dec" <mapsTo>  "_monthName_12_" .
+
+# Before Common Era
+"BCE"	<mapsTo>	"_bce_" .
+"BC"	<mapsTo>	"_bce_" .
+
+# Make days and months two digit
+"\\b(\d)\\b"	<mapsTo>	"0$1" .
+
+# Mark years
+"\\b[12]\d{3}\\b"	<mapsTo>	"_year_$0_" .
+"\\b[123456789]\d{2}\\b"	<mapsTo>	"_year_$0_" .
+
+# 1935-01-08
+"_year_([^_]++)_-(\d++)-(\d++)" <mapsTo> "_result_$1-$2-$3__" .
+
+# 8th of January 1935
+"(\d+) of _monthName_(\d++)_ _year_([^_]++)_" <mapsTo> "_result_$3-$2-$1__" .
+
+# 8 January 1935
+"(\d+).? _monthName_(\d++)_ _year_([^_]++)_" <mapsTo> "_result_$3-$2-$1__" .
+
+# January 8, 1935
+"_monthName_(\d++)_ (\d++), _year_([^_]++)_" <mapsTo>  "_result_$3-$1-$2__" .
+
+# January 1935. Should come after "8 January 1935" to avoid duplicate application.
+"_monthName_(\d++)_ _year_([^_]++)_" <mapsTo> "_result_$2-$1-##__" .
+
+# 1935|1|8
+"_year_([^_]++)_\|(\d++)\|(\d++)" <mapsTo> "_result_$1-$2-$3__" .
+
+# nth century
+"(\d{1,2})(-| )[cC]entury" <mapsTo> "_result_$1##-##-##__" .
+
+# nth millennium
+"0?(\d{1,2})(-| )[mM]illennium" <mapsTo> "_result_$1###-##-##__" .
+
+# 1935
+"_year_([^_]++)_" <mapsTo> "_result_$1-##-##__" .
+
+"(\d{2,3})0s" <mapsTo> "_result_$1#-##-##__" .
+"(\d{1})0s" <mapsTo> "_result_0$1#-##-##__" .
+"0s" <mapsTo> "_result_00#-##-##__" .
+
+# 428/427 or 424/423 BC
+"_result_([^_-]+)-([^_-]+)-([^_-]+)__(?=.{0,100} ?_bce_)" <mapsTo> "_result_-$1-$2_-$3__" .
+# BC/BCE
+"_result_([^_]*)-([^_]*)__ ?_bce_" <mapsTo> "_result_-$1-$2__" .
+
+# misc
+"AD +(\d{3,4})" <mapsTo> "_result_$1-##-##__" .
+"AD +(\d{2})" <mapsTo> "_result_0$1-##-##__" .
+"AD +(\d)" <mapsTo> "_result_00$1-##-##__" .
+"(\d{3,4}) +_bce_" <mapsTo> "_result_-$1-##-##__" .
+"(\d{2}) +_bce_" <mapsTo> "_result_-0$1-##-##__" .
+"(\d) +_bce_" <mapsTo> "_result_-00$1-##-##__" .

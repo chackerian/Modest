@@ -1,0 +1,79 @@
+# Manually coded facts of YAGO.
+#  DO NOT OVERWRITE!
+
+# This file is part of the YAGO project at the Max Planck Institute
+# for Informatics/Germany and Télécom ParisTech University/France:
+# http://yago-knowledge.org
+
+# This file is copyright 2016 JOhannes Hoffart.
+
+# YAGO is free software: you can redistribute it and/or modify it
+# under the terms of the GNU General Public License as published
+# by the Free Software Foundation, either version 3 of the License,
+# or (at your option) any later version.
+
+# YAGO is distributed in the hope that it will be useful, but WITHOUT
+# ANY WARRANTY; without even the implied warranty of MERCHANTABILITY
+# or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public
+# License for more details.
+
+# You should have received a copy of the GNU General Public License
+# along with YAGO.  If not, see <http://www.gnu.org/licenses/>.
+
+@base <http://yago-knowledge.org/resource/> .
+@prefix dc: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix vcard: <http://www.w3.org/2006/vcard/ns#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+"{{Disambig}}"	rdf:type	<_yagoDisambiguationTemplate> .
+"{{Airport_disambig}}"	rdf:type	<_yagoDisambiguationTemplate> .
+"{{Battledist}}"	rdf:type	<_yagoDisambiguationTemplate> .
+"{{Callsigndis}}"	rdf:type	<_yagoDisambiguationTemplate> .
+"{{Chemistry disambiguation}}"	rdf:type	<_yagoDisambiguationTemplate> .
+"{{Church_disambig}}"	rdf:type	<_yagoDisambiguationTemplate> .
+"{{Disambig-Chinese-char-title}}"	rdf:type	<_yagoDisambiguationTemplate> .
+"{{Disambig-cleanup}}"	rdf:type	<_yagoDisambiguationTemplate> .
+"{{Genus_disambiguation}}"	rdf:type	<_yagoDisambiguationTemplate> .
+"{{Geodis}}"	rdf:type	<_yagoDisambiguationTemplate> .
+"{{Hndis}}"	rdf:type	<_yagoDisambiguationTemplate> .
+"{{Hndis-cleanup}}"	rdf:type	<_yagoDisambiguationTemplate> .
+"{{Hospitaldis}}"	rdf:type	<_yagoDisambiguationTemplate> .
+"{{Hurricane_disambig}}"	rdf:type	<_yagoDisambiguationTemplate> .
+"{{Letter_disambig}}"	rdf:type	<_yagoDisambiguationTemplate> .
+"{{Letter-NumberCombDisambig}}"	rdf:type	<_yagoDisambiguationTemplate> .
+"{{Mathdab}}"	rdf:type	<_yagoDisambiguationTemplate> .
+"{{MolFormDisambig}}"	rdf:type	<_yagoDisambiguationTemplate> .
+"{{NA_Broadcast_List}}"	rdf:type	<_yagoDisambiguationTemplate> .
+"{{Numberdis}}"	rdf:type	<_yagoDisambiguationTemplate> .
+"{{Schooldis}}"	rdf:type	<_yagoDisambiguationTemplate> .
+"{{Species_Latin name abbreviation disambiguation}}"	rdf:type	<_yagoDisambiguationTemplate> .
+"{{Taxonomy_disambiguation}}"	rdf:type	<_yagoDisambiguationTemplate> .
+"{{Species_Latin_name_disambiguation}}"	rdf:type	<_yagoDisambiguationTemplate> .
+"{{WP_disambig}}"	rdf:type	<_yagoDisambiguationTemplate> .
+"{{disambig|geo}}"	rdf:type	<_yagoDisambiguationTemplate> .
+"{{surname}}"	rdf:type	<_yagoDisambiguationTemplate> .
+"{{given name}}"	rdf:type	<_yagoDisambiguationTemplate> .
+"{{hndis"	rdf:type	<_yagoDisambiguationTemplate> .
+
+"\\*.{1,5}\\[\\[([^\\]\\n:]+?)\\|([^\\]\\n]+?)\\]\\]"	<_disambiguationPattern>	"@Entity($1) rdfs:label @String($0)" .
+"\\*.{1,5}\\[\\[([^\\]\\n:\\|]+?)\\]\\]"	<_disambiguationPattern>	"@Entity($1) rdfs:label @String($0)" .
+
+# Language-Specific Patterns
+
+# AR
+"{{توضيح}}"	rdf:type	<_yagoDisambiguationTemplate> .
+
+# DE
+"{{Begriffsklärung}}"@deu	rdf:type	<_yagoDisambiguationTemplate> .
+"[[Kategorie:Familienname]]"@deu	rdf:type	<_yagoDisambiguationTemplate> .
+"[[Kategorie:Männlicher Vorname]]"@deu	rdf:type	<_yagoDisambiguationTemplate> .
+"[[Kategorie:Weiblicher Vorname]]"@deu	rdf:type	<_yagoDisambiguationTemplate> .
+
+# ZH
+"{{disambig|"@zho	rdf:type	<_yagoDisambiguationTemplate> .
+"{{消歧义|"@zho	rdf:type	<_yagoDisambiguationTemplate> .

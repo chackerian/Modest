@@ -1,0 +1,182 @@
+# Manually coded facts of YAGO2s.
+#  DO NOT OVERWRITE!
+# This file contains the infobox patterns.
+# It is used by the InfoboxExtractor.
+# Infobox patterns are not case sensitive.
+
+# This file is part of the YAGO project at the Max Planck Institute
+# for Informatics/Germany and Télécom ParisTech University/France:
+# http://yago-knowledge.org
+
+# This file is copyright 2016 Erdal Kuzey.
+
+# YAGO is free software: you can redistribute it and/or modify it
+# under the terms of the GNU General Public License as published
+# by the Free Software Foundation, either version 3 of the License,
+# or (at your option) any later version.
+
+# YAGO is distributed in the hope that it will be useful, but WITHOUT
+# ANY WARRANTY; without even the implied warranty of MERCHANTABILITY
+# or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public
+# License for more details.
+
+# You should have received a copy of the GNU General Public License
+# along with YAGO.  If not, see <http://www.gnu.org/licenses/>.
+
+@base <http://yago-knowledge.org/resource/> .
+@prefix dc: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix vcard: <http://www.w3.org/2006/vcard/ns#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# --------- Combinations of Infobox attributes --------------
+"<office>	<termstart>	<termend>	<predecessor>	<successor>"	<_infoboxCombine>	"-office" .
+"<office0>	<termstart0>	<termend0>	<predecessor0>	<successor0>"	<_infoboxCombine>	"-office0" .
+"<office1>	<termstart1>	<termend1>	<predecessor1>	<successor1>"	<_infoboxCombine>	"-office1" .
+"<office2>	<termstart2>	<termend2>	<predecessor2>	<successor2>"	<_infoboxCombine>	"-office2" .
+"<office3>	<termstart3>	<termend3>	<predecessor3>	<successor3>"	<_infoboxCombine>	"-office3" .
+"<office4>	<termstart4>	<termend4>	<predecessor4>	<successor4>"	<_infoboxCombine>	"-office4" .
+"<office5>	<termstart5>	<termend5>	<predecessor5>	<successor5>"	<_infoboxCombine>	"-office5" .
+"<office6>	<termstart6>	<termend6>	<predecessor6>	<successor6>"	<_infoboxCombine>	"-office6" .
+"<office7>	<termstart7>	<termend7>	<predecessor7>	<successor7>"	<_infoboxCombine>	"-office7" .
+"<office8>	<termstart8>	<termend8>	<predecessor8>	<successor8>"	<_infoboxCombine>	"-office8" .
+"<office9>	<termstart9>	<termend9>	<predecessor9>	<successor9>"	<_infoboxCombine>	"-office9" .
+"<office10>	<termstart10>	<termend10>	<predecessor10>	<successor10>"	<_infoboxCombine>	"-office10" .
+
+#"<office>	<termstart>	<termend>"	<_infoboxCombine>	"office" .
+"<clubs1>	<years1>"	<_infoboxCombine>	"playFor1" .
+"<clubs2>	<years2>"	<_infoboxCombine>	"playFor2" .
+"<clubs3>	<years3>"	<_infoboxCombine>	"playFor3" .
+"<clubs4>	<years4>"	<_infoboxCombine>	"playFor4" .
+"<clubs5>	<years5>"	<_infoboxCombine>	"playFor5" .
+"<clubs6>	<years6>"	<_infoboxCombine>	"playFor6" .
+"<clubs7>	<years7>"	<_infoboxCombine>	"playFor7" .
+"<clubs8>	<years8>"	<_infoboxCombine>	"playFor8" .
+"<clubs9>	<years9>"	<_infoboxCombine>	"playFor9" .
+"<clubs10>	<years10>"	<_infoboxCombine>	"playFor10" .
+"<youthclubs1>	<youthyears1>"	<_infoboxCombine>	"playForYouth1" .
+"<youthclubs2>	<youthyears2>"	<_infoboxCombine>	"playForYouth2" .
+"<youthclubs3>	<youthyears3>"	<_infoboxCombine>	"playForYouth3" .
+"<nationalteam>	<nationalyears>"	<_infoboxCombine>	"playForNation" .
+"<nationalteam1>	<nationalyears1>"	<_infoboxCombine>	"playForNation1" .
+"<nationalteam2>	<nationalyears2>"	<_infoboxCombine>	"playForNation2" .
+"<nationalteam3>	<nationalyears3>"	<_infoboxCombine>	"playForNation3" .
+"<populationestimate>	<populationestimateyear>"	<_infoboxCombine>	"populationEstimate1" .
+"<GDPnominal>	<GDPnominalyear>"	<_infoboxCombine>	"gdp1" .
+"<hdi>	<hdiyear>"	<_infoboxCombine>	"hdi1" .
+"<gini>	<giniyear>"	<_infoboxCombine>	"gini1" .
+
+
+# --------- Infobox patterns for Time Metafacts --------------
+"populationEstimate1"	<_infoboxPattern>	<hasNumberOfPeople> .
+"gdp1"	<_infoboxPattern>	<hasGDP> .
+#"hdi1"	<_infoboxPattern>	<hasHDI> . # Usually gives bad results, so I removed the relation altogether (Fabian)
+"gini1"	<_infoboxPattern>	<hasGini> .
+
+"playFor1"	<_infoboxPattern>	<playsFor> .
+"playFor2"	<_infoboxPattern>	<playsFor> .
+"playFor3"	<_infoboxPattern>	<playsFor> .
+"playFor4"	<_infoboxPattern>	<playsFor> .
+"playFor5"	<_infoboxPattern>	<playsFor> .
+"playFor6"	<_infoboxPattern>	<playsFor> .
+"playFor7"	<_infoboxPattern>	<playsFor> .
+"playFor8"	<_infoboxPattern>	<playsFor> .
+"playFor9"	<_infoboxPattern>	<playsFor> .
+"playFor10"	<_infoboxPattern>	<playsFor> .
+
+"playForYouth"	<_infoboxPattern>	<playsFor> .
+"playForYouth1"	<_infoboxPattern>	<playsFor> .
+"playForYouth2"	<_infoboxPattern>	<playsFor> .
+"playForYouth3"	<_infoboxPattern>	<playsFor> .
+"playForNation"	<_infoboxPattern>	<playsFor> .
+"playForNation1"	<_infoboxPattern>	<playsFor> .
+"playForNation2"	<_infoboxPattern>	<playsFor> .
+"playForNation3"	<_infoboxPattern>	<playsFor> .
+
+
+"-office"	<_infoboxPattern>	<holdsPoliticalPosition,occursSince,occursUntil,hasPredecessor,hasSuccessor> .
+"-office0"	<_infoboxPattern>	<holdsPoliticalPosition,occursSince,occursUntil,hasPredecessor,hasSuccessor> .
+"-office1"	<_infoboxPattern>	<holdsPoliticalPosition,occursSince,occursUntil,hasPredecessor,hasSuccessor> .
+"-office2"	<_infoboxPattern>	<holdsPoliticalPosition,occursSince,occursUntil,hasPredecessor,hasSuccessor> .
+"-office3"	<_infoboxPattern>	<holdsPoliticalPosition,occursSince,occursUntil,hasPredecessor,hasSuccessor> .
+"-office4"	<_infoboxPattern>	<holdsPoliticalPosition,occursSince,occursUntil,hasPredecessor,hasSuccessor> .
+"-office5"	<_infoboxPattern>	<holdsPoliticalPosition,occursSince,occursUntil,hasPredecessor,hasSuccessor> .
+"-office6"	<_infoboxPattern>	<holdsPoliticalPosition,occursSince,occursUntil,hasPredecessor,hasSuccessor> .
+"-office7"	<_infoboxPattern>	<holdsPoliticalPosition,occursSince,occursUntil,hasPredecessor,hasSuccessor> .
+"-office8"	<_infoboxPattern>	<holdsPoliticalPosition,occursSince,occursUntil,hasPredecessor,hasSuccessor> .
+"-office9"	<_infoboxPattern>	<holdsPoliticalPosition,occursSince,occursUntil,hasPredecessor,hasSuccessor> .
+"-office10"	<_infoboxPattern>	<holdsPoliticalPosition,occursSince,occursUntil,hasPredecessor,hasSuccessor> .
+
+#-----For Binary T-facts-----
+"establisheddate"	<_infoboxPattern>	<wasCreatedOnDate> .
+"established"	<_infoboxPattern>	<wasCreatedOnDate> .
+"birthdate"	<_infoboxPattern>	<wasBornOnDate> .
+"dateofbirth"	<_infoboxPattern>	<wasBornOnDate> .
+"born"	<_infoboxPattern>	<wasBornOnDate> .
+"deathdate"	<_infoboxPattern>	<diedOnDate> .
+"dateofdeath"	<_infoboxPattern>	<diedOnDate> .
+"died"	<_infoboxPattern>	<diedOnDate> .
+"spouse"	<_infoboxPattern>	<isMarriedTo> .
+"founded"	<_infoboxPattern>	<wasCreatedOnDate> .
+"published"	<_infoboxPattern>	<wasCreatedOnDate> .
+"released"	<_infoboxPattern>	<wasCreatedOnDate> .
+"releasedate"	<_infoboxPattern>	<wasCreatedOnDate> .
+"datecreated"	<_infoboxPattern>	<wasCreatedOnDate> .
+"recorded"	<_infoboxPattern>	<wasCreatedOnDate> .
+"foundation"	<_infoboxPattern>	<wasCreatedOnDate> .
+"date" <_infoboxPattern>	<happenedOnDate> .
+"year"	<_infoboxPattern>	<happenedOnDate> .
+
+#------------ New Patterns ------------
+
+"electiondate"	<_infoboxPattern>	<happenedOnDate> .
+"shipdecommissioned"	<_infoboxPattern>	<wasDestroyedOnDate> .
+"pubdate"	<_infoboxPattern>	<wasCreatedOnDate> .
+"shipcommissioned"	<_infoboxPattern>	<wasCreatedOnDate> .
+"firstaired"	<_infoboxPattern>	<wasCreatedOnDate> .
+"lastaired"	<_infoboxPattern>	<wasDestroyedOnDate> .
+"airdate"	<_infoboxPattern>	<wasCreatedOnDate> .
+"discovered"	<_infoboxPattern>	<wasCreatedOnDate> .
+"firststormformed"	<_infoboxPattern>	<occursSince> .
+"laststormdissipated"	<_infoboxPattern>	<occursUntil> .
+
+#------------ New Metafact Patterns ------------
+"prizes"	<_infoboxPattern>	<hasWonPrize> .
+"awards"	<_infoboxPattern>	<hasWonPrize> .
+"awards"	<_infoboxPattern>	<hasWonPrize> .
+"afiawards"	<_infoboxPattern>	<hasWonPrize> .
+"baftaawards"	<_infoboxPattern>	<hasWonPrize> .
+"goldenglobeawards"	<_infoboxPattern>	<hasWonPrize> .
+"leadername"	<_infoboxPattern>	<isLeaderOf-> .
+"architect"	<_infoboxPattern>	<created-> .
+"politicalparty"	<_infoboxPattern>	<isAffiliatedTo> .
+"party"	<_infoboxPattern>	<isAffiliatedTo> .
+"notableworks"	<_infoboxPattern>	<created> .
+"workinstitutions"	<_infoboxPattern>	<worksAt> .
+"workplaces"	<_infoboxPattern>	<worksAt> .
+"doctoraladvisor"	<_infoboxPattern>	<hasAcademicAdvisor> .
+"doctoralstudents"	<_infoboxPattern>	<hasAcademicAdvisor-> .
+"almamater"	<_infoboxPattern>	<graduatedFrom> .
+"artist"	<_infoboxPattern>	<created-> .
+"commander"	<_infoboxPattern>	<isLeaderOf-> .
+"commander-in-chief"	<_infoboxPattern>	<isLeaderOf-> .
+"famousworks"	<_infoboxPattern>	<created> .
+"magnumopus"	<_infoboxPattern>	<created> .
+# "premier"	<_infoboxPattern>	<isLeaderOf-> . // Bad results, because is found on the page of the president
+"writer"	<_infoboxPattern>	<created-> .
+"composer"	<_infoboxPattern>	<created-> .
+"starring"	<_infoboxPattern>	<actedIn-> .
+# "producer"	<_infoboxPattern>	<produced-> . # Bad results here
+"creator"	<_infoboxPattern>	<created-> .
+"designer"	<_infoboxPattern>	<created-> .
+"developer"	<_infoboxPattern>	<created-> .
+# "production company"	<_infoboxPattern>	<produced-> . # Bad results here
+"music"	<_infoboxPattern>	<wroteMusicFor-> .
+"founder"	<_infoboxPattern>	<created-> .
+"owner"	<_infoboxPattern>	<owns-> .
+"combatant"	<_infoboxPattern>	<participatedIn-> .
+
