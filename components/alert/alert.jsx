@@ -13,7 +13,7 @@ class Alert extends Component {
     if (this.props.status == "alert") {
       return (
         <div className="fall">
-          <span>{this.props.message="Listing Created Successfully"}</span>
+          <span>Listing Created Successfully</span>
         </div>
       )
     } else {
