@@ -1,6 +1,6 @@
 import { Client } from 'ssh2';
 
-export function runSSHCommand(info, command) {
+function runSSHCommand(info, command) {
   return new Promise((resolve, reject) => {
     const conn = new Client();
 
@@ -32,6 +32,9 @@ export function runSSHCommand(info, command) {
     });
   });
 }
+
+// runSSHCommand()
+
 
 // sudo mkdir -p /opt/mongodb
 // sudo docker pull mongo:$MONGO_VERSION
