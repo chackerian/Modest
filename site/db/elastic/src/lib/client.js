@@ -15,18 +15,9 @@ function Client(config) {
   }
 
   function EsApiClient() {
-    // our client will log minimally by default
-    if (!config.hasOwnProperty('log')) {
-      config.log = 'warning';
-    }
-
     if (!config.hosts && !config.host) {
       config.host = 'http://localhost:9200';
     }
-
-    this.close = function () {
-      this.transport.close();
-    };
 
     this.transport = new Transport(config);
 
