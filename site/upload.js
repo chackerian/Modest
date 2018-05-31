@@ -1,0 +1,2 @@
+// Size, extension
+// gm, imagemagick
