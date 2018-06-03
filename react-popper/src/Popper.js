@@ -9,14 +9,43 @@ import PopperJS, {
 } from 'popper.js';
 import type { Style } from 'typed-styles';
 import { ManagerContext } from './Manager';
-import { unwrapArray } from './utils';
+import { safeInvoke, unwrapArray } from './utils';
 
 type getRefFn = (?HTMLElement) => void;
 type ReferenceElement = ReferenceObject | HTMLElement | null;
 type StyleOffsets = { top: number, left: number };
 type StylePosition = { position: 'absolute' | 'fixed' };
 
+export type PopperArrowProps = {
+  ref: getRefFn,
+  style: StyleOffsets & Style,
+};
+export type PopperChildrenProps = {|
+  ref: getRefFn,
+  style: StyleOffsets & StylePosition & Style,
+  placement: Placement,
+  outOfBoundaries: ?boolean,
+  scheduleUpdate: () => void,
+  arrowProps: PopperArrowProps,
+|};
 export type PopperChildren = PopperChildrenProps => React.Node;
+
+export type PopperProps = {
+  children: PopperChildren,
+  eventsEnabled?: boolean,
+  innerRef?: getRefFn,
+  modifiers?: Modifiers,
+  placement?: Placement,
+  positionFixed?: boolean,
+  referenceElement?: ReferenceElement,
+};
+
+type PopperState = {
+  popperNode: ?HTMLElement,
+  arrowNode: ?HTMLElement,
+  popperInstance: ?PopperJS$Instance,
+  data: ?Data,
+};
 
 const initialStyle = {
   position: 'absolute',
@@ -29,6 +58,12 @@ const initialStyle = {
 const initialArrowStyle = {};
 
 export class InnerPopper extends React.Component<PopperProps, PopperState> {
+  static defaultProps = {
+    placement: 'bottom',
+    eventsEnabled: true,
+    referenceElement: undefined,
+    positionFixed: false,
+  };
 
   state = {
     popperNode: undefined,
@@ -37,7 +72,10 @@ export class InnerPopper extends React.Component<PopperProps, PopperState> {
     data: undefined,
   };
 
-  setPopperNode = (popperNode: ?HTMLElement) => this.setState({ popperNode });
+  setPopperNode = (popperNode: ?HTMLElement) => {
+    safeInvoke(this.props.innerRef, popperNode);
+    this.setState({ popperNode });
+  }
   setArrowNode = (arrowNode: ?HTMLElement) => this.setState({ arrowNode });
 
   updateStateModifier = {
