@@ -32,11 +32,11 @@
 #include <utility>
 #include <vector>
 
-bool AddWallet(CWallet* wallet);
-bool RemoveWallet(CWallet* wallet);
+bool AddWallet(const std::shared_ptr<CWallet>& wallet);
+bool RemoveWallet(const std::shared_ptr<CWallet>& wallet);
 bool HasWallets();
-std::vector<CWallet*> GetWallets();
-CWallet* GetWallet(const std::string& name);
+std::vector<std::shared_ptr<CWallet>> GetWallets();
+std::shared_ptr<CWallet> GetWallet(const std::string& name);
 
 //! Default for -keypool
 static const unsigned int DEFAULT_KEYPOOL_SIZE = 1000;
@@ -999,7 +999,22 @@ public:
     bool NewKeyPool();
     size_t KeypoolCountExternalKeys() EXCLUSIVE_LOCKS_REQUIRED(cs_wallet);
     bool TopUpKeyPool(unsigned int kpSize = 0);
-    void ReserveKeyFromKeyPool(int64_t& nIndex, CKeyPool& keypool, bool fRequestedInternal);
+
+    /**
+     * Reserves a key from the keypool and sets nIndex to its index
+     *
+     * @param[out] nIndex the index of the key in keypool
+     * @param[out] keypool the keypool the key was drawn from, which could be the
+     *     the pre-split pool if present, or the internal or external pool
+     * @param fRequestedInternal true if the caller would like the key drawn
+     *     from the internal keypool, false if external is preferred
+     *
+     * @return true if succeeded, false if failed due to empty keypool
+     * @throws std::runtime_error if keypool read failed, key was invalid,
+     *     was not found in the wallet, or was misclassified in the internal
+     *     or external keypool
+     */
+    bool ReserveKeyFromKeyPool(int64_t& nIndex, CKeyPool& keypool, bool fRequestedInternal);
     void KeepKey(int64_t nIndex);
     void ReturnKey(int64_t nIndex, bool fInternal, const CPubKey& pubkey);
     bool GetKeyFromPool(CPubKey &key, bool internal = false);
@@ -1122,7 +1137,7 @@ public:
     static bool Verify(std::string wallet_file, bool salvage_wallet, std::string& error_string, std::string& warning_string);
 
     /* Initializes the wallet, returns a new CWallet instance or a null pointer in case of an error */
-    static CWallet* CreateWalletFromFile(const std::string& name, const fs::path& path);
+    static std::shared_ptr<CWallet> CreateWalletFromFile(const std::string& name, const fs::path& path);
 
     /**
      * Wallet post-init setup

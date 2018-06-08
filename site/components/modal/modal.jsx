@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-
 import { connect } from 'react-redux';
 
 class Modal extends Component {
@@ -17,10 +16,10 @@ class Modal extends Component {
         return <AddModal />
       }
     } else {
-      $(".modal-backdrop").remove();
-      $("body").css("overflow", "visible");
-      return null
-    }
+        $(".modal-backdrop").remove();
+        $("body").css("overflow", "visible");
+        return null
+      }
   }
 
 }

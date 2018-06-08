@@ -21,8 +21,6 @@ class Dropzone extends Component {
       } else if (dt.items && dt.items.length) {
         dataTransferItemsList = dt.items
       }
-    } else if (event.target && event.target.files) {
-      dataTransferItemsList = event.target.files
     }
   }
 
