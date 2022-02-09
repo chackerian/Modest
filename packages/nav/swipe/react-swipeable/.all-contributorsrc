@@ -1,0 +1,171 @@
+{
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": false,
+  "contributors": [
+    {
+      "login": "sandstreamdevelopment",
+      "name": "sandstreamdevelopment",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/44231396?v=4",
+      "profile": "https://github.com/sandstreamdevelopment",
+      "contributions": [
+        "business",
+        "financial",
+        "ideas"
+      ]
+    },
+    {
+      "login": "marekrozmus",
+      "name": "Marek Rozmus",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/26272040?v=4",
+      "profile": "https://github.com/marekrozmus",
+      "contributions": [
+        "code",
+        "doc",
+        "test",
+        "example",
+        "ideas"
+      ]
+    },
+    {
+      "login": "jakubbogacz",
+      "name": "jakubbogacz",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/26272028?v=4",
+      "profile": "https://github.com/jakubbogacz",
+      "contributions": [
+        "review",
+        "ideas",
+        "doc"
+      ]
+    },
+    {
+      "login": "LukasMarx",
+      "name": "Lukas Marx",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/8080408?v=4",
+      "profile": "https://github.com/LukasMarx",
+      "contributions": [
+        "ideas"
+      ]
+    },
+    {
+      "login": "LuisFilipePedroso",
+      "name": "Luis Filipe Pedroso",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/29440533?v=4",
+      "profile": "https://www.linkedin.com/in/luis-filipe42/",
+      "contributions": [
+        "bug"
+      ]
+    },
+    {
+      "login": "przemyslawzalewski",
+      "name": "Przemysław Zalewski",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/30114244?v=4",
+      "profile": "https://github.com/przemyslawzalewski",
+      "contributions": [
+        "maintenance",
+        "review",
+        "code",
+        "ideas"
+      ]
+    },
+    {
+      "login": "MarkTension",
+      "name": "MarkTension",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/16321685?v=4",
+      "profile": "https://marktension.github.io/tension_design/",
+      "contributions": [
+        "bug"
+      ]
+    },
+    {
+      "login": "wildeyes",
+      "name": "wildeyes",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/1652108?v=4",
+      "profile": "https://github.com/wildeyes",
+      "contributions": [
+        "bug"
+      ]
+    },
+    {
+      "login": "derUli",
+      "name": "Der Uli im Netz",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/1799239?v=4",
+      "profile": "http://www.deruli.de",
+      "contributions": [
+        "bug",
+        "ideas"
+      ]
+    },
+    {
+      "login": "Iliyaz1995",
+      "name": "Iliyaz syed",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/31325754?v=4",
+      "profile": "https://github.com/Iliyaz1995",
+      "contributions": [
+        "bug"
+      ]
+    },
+    {
+      "login": "jcuenod",
+      "name": "James Cuénod",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/4253884?v=4",
+      "profile": "https://twitter.com/jamescuenod",
+      "contributions": [
+        "ideas"
+      ]
+    },
+    {
+      "login": "akshar07",
+      "name": "Akshar Takle",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/11475137?v=4",
+      "profile": "https://github.com/akshar07",
+      "contributions": [
+        "ideas"
+      ]
+    },
+    {
+      "login": "MohammedFaragallah",
+      "name": "Mohammed Faragallah",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/14910456?v=4",
+      "profile": "http://mohammedfaragallah.herokuapp.com",
+      "contributions": [
+        "ideas"
+      ]
+    },
+    {
+      "login": "davidreact",
+      "name": "David",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/17351751?v=4",
+      "profile": "https://davidreact.github.io/portfolio/",
+      "contributions": [
+        "ideas"
+      ]
+    },
+    {
+      "login": "ziabskiK",
+      "name": "Karol Ziąbski",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/33325556?v=4",
+      "profile": "https://github.com/ziabskiK",
+      "contributions": [
+        "bug"
+      ]
+    },
+    {
+      "login": "mattruby",
+      "name": "Matt Ruby",
+      "avatar_url": "https://avatars.githubusercontent.com/u/142194?v=4",
+      "profile": "http://bluestembrands.com",
+      "contributions": [
+        "maintenance"
+      ]
+    }
+  ],
+  "contributorsPerLine": 7,
+  "projectName": "react-swipeable-list",
+  "projectOwner": "sandstreamdev",
+  "repoType": "github",
+  "repoHost": "https://github.com",
+  "skipCi": true
+}
