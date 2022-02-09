@@ -1,0 +1,9 @@
+.dropzone {
+	min-height: 150px;
+	border: 2px dashed black;
+	cursor: pointer;
+	p {
+		text-align: center;
+    	padding-top: 3em;
+	}
+}
