@@ -1,5 +1,5 @@
 # Modest
-React like stack with built in components
+Framework for building modern web apps
 
 ## Forms
 
@@ -14,10 +14,6 @@ Carousel
 
 ## Routing
 Built in simple routing
-
-## Dispatcher
-
-## Views
 
 ## Icons
 Access to Material Icons and more
